@@ -10,10 +10,12 @@ class Comment extends Component {
         }))
     };
     removeComment = () => {
-
+    this.props.removeComment(this.props.index)
     };
 
     saveComment = () => {
+        let newTextValue = this.refs.newText.value;
+        this.props.updateComment(newTextValue,this.props.index);
         this.setState(prevState => ({
             isEditing: false
         }))
@@ -32,7 +34,7 @@ class Comment extends Component {
     renderForm = () => {
         return (
             <div >
-                <textarea defaultValue={this.props.children} />
+                <textarea ref="newText" defaultValue={this.props.children} />
                 <button onClick={this.saveComment}>save</button>
             </div>
         )
