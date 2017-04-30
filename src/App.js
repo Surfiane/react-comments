@@ -5,7 +5,10 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Comment />
+          <Comment>here is a test comment 1</Comment>
+          <Comment>here is a test comment 2</Comment>
+          <Comment>here is a test comment 3</Comment>
+
       </div>
     );
   }
