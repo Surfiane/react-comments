@@ -23,10 +23,21 @@ class Comment extends Component {
 
     renderNormal = () => {
         return (
-            <div >
+            <div className="container" >
+                <li className="list-group-item">
                 <div>{this.props.children}</div>
-                <button onClick={this.editComment}>Edit</button>
-                <button onClick={this.removeComment}>Remove</button>
+                <button type="button"
+                        className="btn btn-primary btn-xs"
+                        title="Edit"
+                        onClick={this.editComment}>
+                    <span className="glyphicon glyphicon-pencil"/>
+                </button>
+                <button type="button"
+                        className="btn btn-danger btn-xs"
+                        title="Delete" onClick={this.removeComment}>
+                    <span className="glyphicon glyphicon-trash"/>
+                </button>
+                </li>
             </div>
         )
     };
